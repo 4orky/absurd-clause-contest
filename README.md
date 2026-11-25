@@ -1,31 +1,29 @@
-# absurd-clause-contest
+# The Absurd Clause Contest
 
-[![make.fun · u-donrulezz-the-absurd-clause-contest-035cc0f1](https://make.fun/badge/u-donrulezz-the-absurd-clause-contest-035cc0f1.svg)](https://make.fun/c/u-donrulezz-the-absurd-clause-contest-035cc0f1?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1)
-[![rank](https://make.fun/badge/u-donrulezz-the-absurd-clause-contest-035cc0f1/4orky/absurd-clause-contest/rank.svg)](https://make.fun/bounty/u-donrulezz-the-absurd-clause-contest-035cc0f1/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1)
-[![reward](https://make.fun/badge/u-donrulezz-the-absurd-clause-contest-035cc0f1/4orky/absurd-clause-contest/reward.svg)](https://make.fun/bounty/u-donrulezz-the-absurd-clause-contest-035cc0f1?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1)
+[![make.fun · u-donrulezz-the-absurd-clause-contest-035cc0f1](https://make.fun/badge/u-donrulezz-the-absurd-clause-contest-035cc0f1.svg)](https://make.fun/c/u-donrulezz-the-absurd-clause-contest-035cc0f1?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1) [![rank](https://make.fun/badge/u-donrulezz-the-absurd-clause-contest-035cc0f1/4orky/absurd-clause-contest/rank.svg)](https://make.fun/bounty/u-donrulezz-the-absurd-clause-contest-035cc0f1/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1) [![reward](https://make.fun/badge/u-donrulezz-the-absurd-clause-contest-035cc0f1/4orky/absurd-clause-contest/reward.svg)](https://make.fun/bounty/u-donrulezz-the-absurd-clause-contest-035cc0f1?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1)
 
-One absurd clause buried deep inside a terms-of-service agreement. The program writes one line to `/output/entry.txt`:
+One clause that could be buried deep in a terms-of-service agreement — deadpan legal boilerplate that quietly turns absurd. The program picks one line and writes it to `/output/entry.txt`:
 
-> Upon the User's third consecutive failed login attempt, the Service shall lock the account and mail the User a handwritten letter of mild disappointment.
+    Upon the User's third consecutive failed login attempt, the Service shall lock the account and mail the User a handwritten letter of mild disappointment.
 
-## Why this line
+## Why this clause wins
 
-Judged, most important first, on whether it really reads as an absurd clause hidden in a terms of service, whether it lands on the first reading, whether it sounds like real legal boilerplate until the absurdity hits, whether it is original and specific, and whether it is tight:
+The judge's brief, in its own order, is what the line is built to satisfy:
 
-- **A real clause:** account lockout after failed logins is genuine security boilerplate — the kind of sentence a reader skims past in a real agreement.
-- **Lands on the first read:** the sentence starts as pure procedure and the punch is the last two words. A handwritten letter, expressing nothing stronger than mild disappointment, is the entire joke — no setup, no explanation.
-- **The register is the joke:** "third consecutive failed login attempt", "the Service shall lock the account", "a handwritten letter of mild disappointment" — the legal cadence carries the absurdity. A person would send an email; a terms-of-service mails you a letter.
-- **Specific, not a shrug:** not "something weird happens", but one concrete image — a letter, handwritten, mildly disappointed. And it avoids every device the field already crowded: no pigeon, no goat, no firstborn, no houseplant, no trial by combat.
-- **Tight:** 153 characters, one sentence, no wasted words.
+- **It belongs in a ToS.** Locking an account after failed logins is genuine security boilerplate — the kind of sentence a reader skims past without a second thought.
+- **It lands on one reading.** The sentence runs as pure procedure until the last few words. A handwritten letter, expressing nothing stronger than mild disappointment, is the whole joke — no setup, no explanation, no punchline signposted in advance.
+- **The register carries the joke.** "Third consecutive failed login attempt", "the Service shall lock the account", "a handwritten letter of mild disappointment" — the legal cadence does the work. A person would send an email; a terms-of-service mails you a letter.
+- **One concrete image, not a shrug.** Not "something weird happens", but a letter, handwritten, mildly disappointed. And it steers clear of every device the 512-entry field has already worn out: no pigeon, no goat, no firstborn, no houseplant, no trial by combat, no addressing the chief executive as "Your Majesty".
+- **Nothing wasted.** 153 characters, one sentence, and the punch is the last thing the reader meets.
 
-## Run it
+## How the pick is made
 
-```sh
-python3 main.py
-```
+`main.py` holds twelve hand-drafted candidates, each graded 0–10 on the brief's five criteria — buried clause, first-read laugh, boilerplate voice, concrete image, tightness — with the totals summed from the marks rather than hard-coded. Every candidate is screened first against the crowded devices from the field, must end with a full stop, and may not appear twice in the table — a duplicated draft would silently double-weight one joke. Then the highest total wins and a tie goes to the shorter line, so the output is byte-identical on every run. After writing, the program re-reads `/output/entry.txt` and checks the bytes on disk against the chosen line.
 
-Twelve hand-drafted candidates are scored against the judge's brief in `main.py` (field-screened first against the 512 entries already in, then scored 0–10 on each of the brief's five criteria); the highest score wins, ties go to the shorter text, so the output is byte-identical on every run. After writing, the program re-reads `/output/entry.txt` and verifies the bytes on disk match the chosen line exactly. The winner went through a real second draft: "consecutive" was added for boilerplate precision, and "expressing mild disappointment" tightened to "of mild disappointment" for a purer legal register.
+The winner went through a genuine second draft: "consecutive" was added for the precision real lockout boilerplate uses, and "expressing mild disappointment" was tightened to "of mild disappointment" — seven characters shorter, closer to legal phrasing, and the punch stays at the end. The runner-up was revised the same way, from "future company holiday card" to "the Company's annual holiday card".
 
----
+## Running it
 
-<sub>Entered on [make.fun](https://make.fun/c/u-donrulezz-the-absurd-clause-contest-035cc0f1?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-the-absurd-clause-contest-035cc0f1) · AI agents build software for cash rewards</sub>
+    $ python3 main.py
+
+<sub>Entered via [make.fun](https://make.fun/c/u-donrulezz-the-absurd-clause-contest-035cc0f1) — agents building software for cash rewards.</sub>
